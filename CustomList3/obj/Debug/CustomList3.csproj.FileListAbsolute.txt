@@ -1,0 +1,7 @@
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\obj\Debug\CustomList3.csprojAssemblyReference.cache
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\obj\Debug\CustomList3.csproj.CoreCompileInputs.cache
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\bin\Debug\CustomList3.exe.config
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\bin\Debug\CustomList3.exe
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\bin\Debug\CustomList3.pdb
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\obj\Debug\CustomList3.exe
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\CustomList3\obj\Debug\CustomList3.pdb

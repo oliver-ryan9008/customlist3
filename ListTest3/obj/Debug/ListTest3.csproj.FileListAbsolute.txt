@@ -1,0 +1,17 @@
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\obj\Debug\ListTest3.csprojAssemblyReference.cache
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\obj\Debug\ListTest3.csproj.CoreCompileInputs.cache
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\ListTest3.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\ListTest3.pdb
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\CustomList3.exe
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\CustomList3.pdb
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\CustomList3.exe.config
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\obj\Debug\ListTest3.csproj.CopyComplete
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\obj\Debug\ListTest3.dll
+C:\Users\rdo17\Desktop\DevCode\MakeUpProjects\ListTest3\obj\Debug\ListTest3.pdb
