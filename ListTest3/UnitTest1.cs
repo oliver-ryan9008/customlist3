@@ -10,12 +10,10 @@ namespace ListTest3
         [TestMethod]
         public void TestMethodAddInt()
         {
-
-
             // Arrange
             ListFunctions<int> listFunctions = new ListFunctions<int>();
             int elementToAdd = 6;
-            int expected = 8;
+            int expected = 6579;
 
             // Act
             listFunctions.AddList(elementToAdd);
@@ -23,8 +21,20 @@ namespace ListTest3
             listFunctions.AddList(elementToAdd);
             listFunctions.AddList(elementToAdd);
             listFunctions.AddList(8);
+            listFunctions.AddList(09812537);
+            listFunctions.AddList(893475);
+            listFunctions.AddList(57);
+            listFunctions.AddList(63);
+            listFunctions.AddList(87);
+            listFunctions.AddList(353);
+            listFunctions.AddList(657);
+            listFunctions.AddList(516);
+            listFunctions.AddList(687);
+            listFunctions.AddList(498);
+            listFunctions.AddList(6579);
+            listFunctions.AddList(634357354);
 
-            int actual = listFunctions.MyArray[4];
+            int actual = listFunctions.MyArray[15];
 
 
             // Assert
@@ -89,6 +99,37 @@ namespace ListTest3
             listFunctions.AddList(8);
 
             string actual = listFunctions.ToString();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestIndexerForString()
+        {
+            ListFunctions<string> listFunctions = new ListFunctions<string>();
+
+            string expected = "World";
+
+            listFunctions.AddList("Hello");
+            listFunctions.AddList("World");
+            listFunctions.AddList("!");
+
+            string actual = listFunctions[1];
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestIndexerForInt()
+        {
+            ListFunctions<int> listFunctions = new ListFunctions<int>();
+
+            int expected = 37;
+
+            listFunctions.AddList(1);
+            listFunctions.AddList(54);
+            listFunctions.AddList(37);
+            listFunctions.AddList(82759291);
+
+            int actual = listFunctions[2];
             Assert.AreEqual(expected, actual);
         }
 

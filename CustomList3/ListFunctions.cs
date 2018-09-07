@@ -8,8 +8,12 @@ namespace CustomList3
 {
     public class ListFunctions<T>
     {
+        private int count;
         public int ArrayLength { get; set; }
-        public int ArrayCount { get; set; }
+        public int ArrayCount
+        {
+            get { return count; }
+        }
         public T[] MyArray { get; set; }
 
         public ListFunctions()
@@ -17,6 +21,14 @@ namespace CustomList3
             MyArray = new T[1];
 
         }
+
+        // Indexer
+        public T this[int i]
+        {
+            get { return MyArray[i]; }
+            set { MyArray[i] = value; }
+        }
+
 
         public void AddList(T elementToAdd)
         {
@@ -34,7 +46,7 @@ namespace CustomList3
             }
 
             MyArray[ArrayCount] = elementToAdd;
-            ArrayCount++;
+            count++;
         }
 
         public bool RemovedList(T itemToRemove)
@@ -44,7 +56,7 @@ namespace CustomList3
             {
                 if (MyArray[i].Equals(itemToRemove))
                 {
-                    ArrayCount--;
+                    count--;
                     MoveArrayIndexes(i);
                     return true;
                 }
@@ -73,6 +85,7 @@ namespace CustomList3
 
         public override string ToString()
         {
+            //StringBuilder sb = new StringBuilder();
             string convertedStringArray = "";
             if (ArrayCount != 0)
             {

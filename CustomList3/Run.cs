@@ -11,6 +11,7 @@ namespace CustomList3
         public void StartProgram()
         {
             ListFunctions<int> listFunctions = new ListFunctions<int>();
+            
         }
 
     }
