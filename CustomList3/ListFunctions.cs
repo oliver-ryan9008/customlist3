@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList3
 {
-    public class ListFunctions<T>
+    public class ListFunctions<T> : IEnumerable<T>
     {
         private int count;
         public int ArrayLength { get; set; }
@@ -19,7 +20,6 @@ namespace CustomList3
         public ListFunctions()
         {
             MyArray = new T[1];
-
         }
 
         // Indexer
@@ -32,12 +32,12 @@ namespace CustomList3
 
         public void AddList(T elementToAdd)
         {
-            if (ArrayLength == ArrayCount)
+            if (ArrayLength == count)
             {
                 ArrayLength += 1;
                 T[] myNewArray = new T[ArrayLength];
 
-                for (int i = 0; i < ArrayCount; i++)
+                for (int i = 0; i < count; i++)
                 {
                     myNewArray[i] = MyArray[i];
                 }
@@ -45,32 +45,39 @@ namespace CustomList3
                 MyArray = myNewArray;
             }
 
-            MyArray[ArrayCount] = elementToAdd;
+            MyArray[count] = elementToAdd;
             count++;
         }
 
-        public bool RemovedList(T itemToRemove)
+        public void RemovedList(T itemToRemove)
         {
-
-            for (int i = 0; i < ArrayCount; i++)
+            //T[] findArrayIndex = new T[ArrayLength];
+            T[] newRemovedArray = new T[ArrayLength];
+            for (var n = 0; n < count; n++)
             {
-                if (MyArray[i].Equals(itemToRemove))
+                if (MyArray[n].Equals(itemToRemove))
                 {
-                    count--;
-                    MoveArrayIndexes(i);
-                    return true;
+                    int removeIndex = n;
+                    int i = 0;
+                    int j = 0;
+                    while (i < ArrayLength)
+                    {
+                        if (i != removeIndex)
+                        {
+                            newRemovedArray[j] = MyArray[i];
+                            j++;
+                        }
+                        i++;
+                    }
+                    MyArray = newRemovedArray;
                 }
-
             }
-
-            return false;
-
         }
 
         public void MoveArrayIndexes(int index)
         {
             T[] myNewArray = new T[ArrayLength];
-            for (int i = index; i < ArrayCount; i++)
+            for (int i = index; i < count; i++)
             {
                 myNewArray[i] = MyArray[i + 1];
             }
@@ -87,13 +94,76 @@ namespace CustomList3
         {
             //StringBuilder sb = new StringBuilder();
             string convertedStringArray = "";
-            if (ArrayCount != 0)
+            if (count != 0)
             {
-                for (int i = 0; i < ArrayCount; i++)
+                for (int i = 0; i < count; i++)
                     convertedStringArray = Convert.ToString(MyArray[i]);
             }
 
             return convertedStringArray;
         }
+
+        public static ListFunctions<T> operator +(ListFunctions<T> one, ListFunctions<T> two)
+        {
+            ListFunctions<T> currentList = new ListFunctions<T>();
+
+            for (var i = 0; i < one.ArrayLength; i++)
+            {
+                currentList.AddList(one[i]);
+            }
+
+            for (var j = 0; j < two.ArrayLength; j++)
+            {
+                currentList.AddList(two[j]);
+            }
+
+
+            return currentList;
+        }
+
+        public static ListFunctions<T> operator -(ListFunctions<T> one, ListFunctions<T> two)
+        {
+            ListFunctions<T> currentList = new ListFunctions<T>();
+
+            for (var i = 0; i < one.ArrayLength; i++)
+            {
+                currentList.AddList(one[i]);
+            }
+
+            for (var j = 0; j < two.ArrayLength; j++)
+            {
+                if (!currentList.Contains(two[j]))
+                {
+                    currentList.AddList(two[j]);
+                }
+            }
+
+            return currentList;
+        }
+
+        public void ZipList(ListFunctions<T> one, ListFunctions<T> two)
+        {
+            T[] newArray = new T[ArrayLength];
+            foreach (var i in one)
+            {
+                
+            }
+
+            MyArray = newArray;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return MyArray[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
     }
 }
