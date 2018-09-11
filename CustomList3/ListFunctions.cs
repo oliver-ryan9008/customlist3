@@ -51,25 +51,30 @@ namespace CustomList3
 
         public void RemovedList(T itemToRemove)
         {
-            //T[] findArrayIndex = new T[ArrayLength];
             T[] newRemovedArray = new T[ArrayLength];
-            for (var n = 0; n < count; n++)
+            for (var n = 0; n < ArrayLength; n++)
             {
-                if (MyArray[n].Equals(itemToRemove))
+                if (MyArray[n] != null)
                 {
-                    int removeIndex = n;
-                    int i = 0;
-                    int j = 0;
-                    while (i < ArrayLength)
+                    if (MyArray[n].Equals(itemToRemove))
                     {
-                        if (i != removeIndex)
+                        int removeIndex = n;
+                        int i = 0;
+                        int j = 0;
+                        while (i < ArrayLength)
                         {
-                            newRemovedArray[j] = MyArray[i];
-                            j++;
+                            if (i != removeIndex)
+                            {
+                                newRemovedArray[j] = MyArray[i];
+                                j++;
+                            }
+
+                            i++;
                         }
-                        i++;
+
+                        MyArray = newRemovedArray;
                     }
-                    MyArray = newRemovedArray;
+                    
                 }
             }
         }
@@ -141,15 +146,47 @@ namespace CustomList3
             return currentList;
         }
 
-        public void ZipList(ListFunctions<T> one, ListFunctions<T> two)
+        public ListFunctions<T> ZipList(ListFunctions<T> two)
         {
-            T[] newArray = new T[ArrayLength];
-            foreach (var i in one)
+            ListFunctions<T> newList = new ListFunctions<T>();
+            int i = 0;
+
+            if (count > two.count)
             {
-                
+                while (i < two.count)
+                {
+                    newList.AddList(MyArray[i]);
+                    newList.AddList(two[i]);
+
+                    i++;
+                }
+                newList.AddList(MyArray[i]);
+                i++;
+            }
+            else if (count < two.count)
+            {
+                while (i < count)
+                {
+                    newList.AddList(MyArray[i]);
+                    newList.AddList(two[i]);
+
+                    i++;
+                }
+                newList.AddList(MyArray[i]);
+                i++;
+            }
+            else
+            {
+                while (i < count)
+                {
+                    newList.AddList(MyArray[i]);
+                    newList.AddList(two[i]);
+
+                    i++;
+                }
             }
 
-            MyArray = newArray;
+            return newList;
         }
 
         public IEnumerator<T> GetEnumerator()
